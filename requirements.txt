@@ -1,0 +1,125 @@
+# ================================================================
+# iPrint News Recommendation & Ranking System
+# ================================================================
+# NumPy: Fundamental N-dimensional array and numerical computing library.
+numpy==1.26.4
+
+# SciPy: Scientific computing library built on top of NumPy.
+scipy==1.13.1
+
+# Pandas: Primary DataFrame library for structured/tabular data.
+pandas==2.2.2
+
+# Polars: High-performance DataFrame library optimized for fast data processing and lower memory consumption.
+polars==1.17.1
+
+# Matplotlib: General-purpose visualization library.
+matplotlib==3.9.2
+
+# PyTorch: Deep learning framework used as the underlying tensor and neural-network runtime for transformer-based models.
+torch==2.2.2
+
+# Torchvision: PyTorch computer-vision extension.
+torchvision==0.17.2
+
+# Torchaudio: PyTorch audio-processing extension.
+torchaudio==2.2.2
+
+# Pillow: Python Imaging Library used for reading and manipulating images.
+Pillow==11.1.0
+
+# scikit-image: Image-processing and computer-vision algorithms.
+scikit-image==0.24.0
+
+# Albumentations: Image augmentation library.
+albumentations==1.4.21
+
+# ONNX: Open Neural Network Exchange format used for model serialization/interoperability.
+onnx==1.17.0
+
+# ONNX Runtime GPU: High-performance inference engine for ONNX models using GPU.
+onnxruntime-gpu==1.19.2
+
+# TensorBoard: Visualization and experiment-monitoring tool commonly used with PyTorch and deep-learning training.
+tensorboard==2.18.0
+
+# Scikit-learn: General-purpose machine-learning library.
+scikit-learn==1.5.2
+
+# Joblib: Efficient serialization and parallel-computation library.
+joblib==1.4.2
+
+# Implicit: Collaborative filtering library designed for implicit-feedback recommendation systems.
+implicit==0.7.2
+
+# Sentence Transformers: Provides pretrained transformer models for generating sentence/document-level semantic embeddings.
+sentence-transformers==3.3.1
+
+# Transformers: Hugging Face transformer library.
+transformers==4.47.1
+
+# Tokenizers: Fast tokenizer implementation used by transformer models.
+tokenizers==0.21.0
+
+# SentencePiece: Subword tokenization library used by several transformer architectures.
+sentencepiece==0.2.0
+
+# FAISS CPU: Facebook/Meta AI Similarity Search library.
+faiss-cpu==1.9.0.post1
+
+# LightGBM: Gradient-boosting framework supporting ranking objectives.
+lightgbm==4.5.0
+
+# FastAPI: Modern Python web framework used to expose recommendation and ranking models through REST APIs.
+fastapi==0.115.6
+
+# Uvicorn: High-performance ASGI server used to run FastAPI applications.
+uvicorn[standard]==0.34.0
+
+# Pydantic: Data validation and serialization framework.
+pydantic==2.10.4
+
+# Pydantic Settings: Configuration management using environment variables and configuration files.
+pydantic-settings==2.7.0
+
+# SQLAlchemy: Python SQL toolkit and ORM.
+SQLAlchemy==2.0.36
+
+# psycopg2-binary: PostgreSQL database adapter for Python.
+psycopg2-binary==2.9.10
+
+# Alembic: Database migration framework commonly used with SQLAlchemy.
+alembic==1.14.0
+
+# Redis Python client: Used to communicate with Redis from Python.
+redis==5.2.1
+
+# MLflow: Experiment tracking and ML lifecycle management platform.
+mlflow==2.19.0
+
+# Streamlit: Framework for building interactive data/ML dashboards.
+streamlit==1.41.1
+
+# PyYAML: Reads YAML configuration files.
+PyYAML==6.0.2
+
+# python-dotenv: Loads environment variables from a .env file.
+python-dotenv==1.0.1
+
+# HTTP / NETWORKING : Used for communicating with external/internal services and downloading resources.
+requests==2.32.3
+
+# HTTPX: Modern HTTP client supporting synchronous and asynchronous requests.
+httpx==0.28.1
+
+# tqdm: Provides progress bars for long-running operations.
+tqdm==4.67.1
+
+# psutil: Provides information about CPU, memory, disk and process utilization.
+psutil==6.1.0
+
+# Prometheus Client: Exposes application metrics that can be collected by Prometheus and visualized using Grafana.
+prometheus-client==0.21.1
+
+# ORJSON: High-performance JSON serializer/deserializer.
+orjson==3.10.12
