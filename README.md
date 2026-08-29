@@ -1,1 +1,1 @@
-# iPrint-News-Recommendation-Ranking-System
+# iPrint News Recommendation Ranking System
