@@ -1,0 +1,12 @@
+{
+    "num_users": 1895,
+    "num_articles": 2987,
+    "num_sessions": 28909,
+    "num_interactions": 72312,
+    "num_interaction_types": 5,
+    "num_english_articles": 2264,
+    "num_pulled_articles": 75,
+    "user_item_sparsity": 0.992807884297214,
+    "repeat_user_item_rows": 31602,
+    "item_join_coverage": 1.0
+}
