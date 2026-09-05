@@ -1,0 +1,11 @@
+{
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dimension": 384,
+    "retrieval_k": 100,
+    "top_k": 10,
+    "recency_half_life_days": 14,
+    "english_only": true,
+    "available_only": true,
+    "normalized_embeddings": true,
+    "faiss_metric": "inner_product_equivalent_to_cosine"
+}
