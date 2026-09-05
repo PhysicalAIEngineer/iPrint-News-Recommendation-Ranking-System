@@ -1,0 +1,27 @@
+{
+    "candidate_k_per_source": 100,
+    "final_candidate_k": 300,
+    "top_k": 10,
+    "recent_days": 7,
+    "recency_half_life_days": 14,
+    "interaction_weights": {
+        "content_watched": 1.0,
+        "content_liked": 2.0,
+        "content_saved": 3.0,
+        "content_followed": 4.0,
+        "content_commented_on": 5.0
+    },
+    "candidate_sources": [
+        "popularity",
+        "trending",
+        "country",
+        "tfidf",
+        "item_cf",
+        "als",
+        "semantic"
+    ],
+    "content_based_language": "en",
+    "availability_rule": "latest_content_state",
+    "seen_item_rule": "remove_training_history_items",
+    "split_strategy": "last_interaction_per_user"
+}
