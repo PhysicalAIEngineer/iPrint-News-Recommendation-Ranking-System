@@ -1,0 +1,23 @@
+{
+    "model_type": "LightGBM LambdaMART",
+    "objective": "lambdarank",
+    "target_k": 10,
+    "features": [
+        "popularity_score",
+        "trending_score",
+        "country_score",
+        "tfidf_score",
+        "cf_score",
+        "als_score",
+        "semantic_score",
+        "freshness_score",
+        "num_sources",
+        "source_count",
+        "score_sum",
+        "score_mean",
+        "score_max",
+        "score_min"
+    ],
+    "best_iteration": 21,
+    "random_state": 42
+}

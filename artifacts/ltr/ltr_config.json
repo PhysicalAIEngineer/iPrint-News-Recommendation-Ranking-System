@@ -1,0 +1,63 @@
+{
+    "project": "iPrint News Recommendation & Ranking System",
+    "model": {
+        "type": "LightGBM",
+        "objective": "lambdarank",
+        "best_iteration": 21,
+        "parameters": {
+            "objective": "lambdarank",
+            "metric": "ndcg",
+            "ndcg_at": [
+                5,
+                10
+            ],
+            "label_gain": [
+                0,
+                1
+            ],
+            "learning_rate": 0.05,
+            "num_leaves": 31,
+            "max_depth": -1,
+            "min_child_samples": 30,
+            "subsample": 0.8,
+            "subsample_freq": 1,
+            "colsample_bytree": 0.8,
+            "reg_alpha": 0.1,
+            "reg_lambda": 1.0,
+            "verbosity": -1,
+            "random_state": 42,
+            "n_jobs": -1
+        }
+    },
+    "ranking": {
+        "top_k": 10,
+        "features": [
+            "popularity_score",
+            "trending_score",
+            "country_score",
+            "tfidf_score",
+            "cf_score",
+            "als_score",
+            "semantic_score",
+            "freshness_score",
+            "num_sources",
+            "source_count",
+            "score_sum",
+            "score_mean",
+            "score_max",
+            "score_min"
+        ]
+    },
+    "evaluation": {
+        "candidate_recall_ceiling": 0.37784256559766766,
+        "ltr_ndcg_at_10": 0.3498590697742037,
+        "best_baseline": "country_score",
+        "best_baseline_ndcg_at_10": 0.2456081181295846
+    },
+    "artifacts": {
+        "model": "D:\\iPrint-News-Recommendation-Ranking-System\\artifacts\\ltr\\lightgbm_ltr_model.txt",
+        "feature_config": "D:\\iPrint-News-Recommendation-Ranking-System\\artifacts\\ltr\\ltr_feature_config.json",
+        "feature_importance": "D:\\iPrint-News-Recommendation-Ranking-System\\artifacts\\ltr\\feature_importance.csv",
+        "evaluation": "D:\\iPrint-News-Recommendation-Ranking-System\\artifacts\\ltr\\ranking_evaluation.csv"
+    }
+}

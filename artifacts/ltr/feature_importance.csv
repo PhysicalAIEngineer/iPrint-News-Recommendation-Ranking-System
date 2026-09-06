@@ -1,0 +1,15 @@
+feature,importance_gain,importance_split
+freshness_score,10497.300708770752,150
+num_sources,5275.345848083496,37
+als_score,2507.2676496505737,111
+country_score,1850.4242401123047,67
+cf_score,978.4377117156982,47
+score_sum,846.8588876724243,41
+trending_score,815.9496884346008,31
+score_mean,720.1125645637512,45
+tfidf_score,673.0729312896729,49
+popularity_score,476.31486082077026,32
+source_count,337.77198791503906,3
+score_max,322.2757787704468,17
+semantic_score,0.0,0
+score_min,0.0,0
