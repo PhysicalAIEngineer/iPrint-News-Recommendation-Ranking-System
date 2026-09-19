@@ -1,11 +1,42 @@
 from fastapi.testclient import TestClient
+
 from api.main import app
-client=TestClient(app)
+
+client = TestClient(app)
+
+
 def test_health():
- r=client.get("/health"); assert r.status_code==200; assert r.json()["status"]=="healthy"
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json()["status"] == "healthy"
+
+
 def test_recommend():
- r=client.post("/recommend",json={"user_id":"u1","top_k":5,"category":"technology"})
- assert r.status_code==200 and len(r.json()["recommendations"])==5
+    response = client.post(
+        "/recommend",
+        json={"user_id": "u1", "top_k": 5, "category": "technology"},
+    )
+    assert response.status_code == 200
+    assert len(response.json()["recommendations"]) == 5
+
+
 def test_rank():
- r=client.post("/rank",json=[{"article_id":"a","title":"A","score":.1,"model_version":"v1"},{"article_id":"b","title":"B","score":.9,"model_version":"v1"}])
- assert r.status_code==200 and r.json()[0]["article_id"]=="b"
+    response = client.post(
+        "/rank",
+        json=[
+            {
+                "article_id": "a",
+                "title": "A",
+                "score": 0.1,
+                "model_version": "v1",
+            },
+            {
+                "article_id": "b",
+                "title": "B",
+                "score": 0.9,
+                "model_version": "v1",
+            },
+        ],
+    )
+    assert response.status_code == 200
+    assert response.json()[0]["article_id"] == "b"
