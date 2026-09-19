@@ -1,33 +1,19 @@
 name: CI
-
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
 jobs:
-  test-and-build:
+  test-lint-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run tests
-        run: pytest -q
-
-      - name: Build API image
-        run: docker build -f api/Dockerfile -t iprint-api:test .
-
-      - name: Build dashboard image
-        run: docker build -f dashboard/Dockerfile -t iprint-dashboard:test .
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install CI dependencies
+        run: pip install fastapi==0.115.6 pydantic==2.10.6 prometheus-client==0.21.1 orjson==3.10.12 redis==5.2.1 SQLAlchemy==2.0.36 psycopg2-binary==2.9.10 pytest==8.3.4 httpx==0.28.1 ruff==0.9.2
+      - run: ruff check api tests training dashboard
+      - run: pytest -q
+      - run: docker build -f api/Dockerfile -t iprint-api:test .
+      - run: docker build -f dashboard/Dockerfile -t iprint-dashboard:test .
