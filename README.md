@@ -133,55 +133,7 @@ The system separates the recommendation lifecycle into five logical layers:
 ---
 
 # 5. End-to-End Recommendation Flow
-
-```text
-                   ┌──────────────────────┐
-                   │      Raw Data        │
-                   │ Users + Articles +   │
-                   │ Interaction Events   │
-                   └──────────┬───────────┘
-                              ↓
-                   ┌──────────────────────┐
-                   │ Feature Engineering  │
-                   │ User / Item / Context│
-                   └──────────┬───────────┘
-                              ↓
-                   ┌──────────────────────┐
-                   │ Candidate Generation │
-                   │ CF + Content + Rules │
-                   └──────────┬───────────┘
-                              ↓
-                   ┌──────────────────────┐
-                   │ Semantic Retrieval   │
-                   │ Embeddings + FAISS   │
-                   └──────────┬───────────┘
-                              ↓
-                   ┌──────────────────────┐
-                   │ Learning-to-Rank     │
-                   │ LightGBM LTR         │
-                   └──────────┬───────────┘
-                              ↓
-                   ┌──────────────────────┐
-                   │ Top-K Recommendations│
-                   └──────────┬───────────┘
-                              ↓
-                   ┌──────────────────────┐
-                   │ FastAPI Serving      │
-                   └──────────┬───────────┘
-                         ┌────┴────┐
-                         ↓         ↓
-                      Redis    PostgreSQL
-                         │         │
-                         └────┬────┘
-                              ↓
-                   ┌──────────────────────┐
-                   │ Streamlit Dashboard  │
-                   └──────────┬───────────┘
-                              ↓
-                   Prometheus → Grafana
-```
-
----
+![External Logo] https://chatgpt.com/backend-api/estuary/content?id=file_00000000522882089de420b270a1481b&ts=497173&p=fs&cid=1&sig=3e853595d688959d87f49f817b3780fe5ddf0a7aef5d41b8437735bc1538d83a&v=0
 
 # 6. Data
 
