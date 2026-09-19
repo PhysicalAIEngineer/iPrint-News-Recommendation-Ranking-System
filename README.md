@@ -133,7 +133,8 @@ The system separates the recommendation lifecycle into five logical layers:
 ---
 
 # 5. End-to-End Recommendation Flow
-!https://chatgpt.com/backend-api/estuary/content?id=file_00000000522882089de420b270a1481b&ts=497173&p=fs&cid=1&sig=3e853595d688959d87f49f817b3780fe5ddf0a7aef5d41b8437735bc1538d83a&v=0
+<img width="1536" height="1024" alt="ChatGPT Image Sep 19, 2026, 06_40_55 PM" src="https://github.com/user-attachments/assets/8b06c519-5521-4293-86a0-256f684250a4" />
+
 
 # 6. Data
 
