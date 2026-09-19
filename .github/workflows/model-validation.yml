@@ -1,18 +1,56 @@
 name: Model Validation
+
 on:
   workflow_dispatch:
   push:
     paths:
-      - training/**
-      - src/**
-      - Notebook/**
+      - "training/**"
+      - "src/**"
+      - "Notebook/**"
+      - "api/**"
+      - "tests/**"
+      - "requirements.txt"
+
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install fastapi==0.115.6 pydantic==2.10.6 prometheus-client==0.21.1 orjson==3.10.12 redis==5.2.1 SQLAlchemy==2.0.36 psycopg2-binary==2.9.10 pytest==8.3.4 httpx==0.28.1 ruff==0.9.2
-      - run: python -m compileall api src training dashboard tests
-      - run: pytest -q
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install CI dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install             fastapi==0.115.6             pydantic==2.10.6             prometheus-client==0.21.1             orjson==3.10.12             redis==5.2.1             SQLAlchemy==2.0.36             psycopg2-binary==2.9.10             pytest==8.3.4             httpx==0.28.1             ruff==0.9.2
+
+      - name: Lint changed production code
+        run: ruff check api src training dashboard tests
+
+      - name: Compile Python sources
+        run: python -m compileall -q api src training dashboard tests
+
+      - name: Run API tests
+        env:
+          DATABASE_URL: postgresql+psycopg2://iprint:iprint@localhost:5432/iprint
+          REDIS_URL: redis://localhost:6379/0
+        run: pytest -q tests
+
+      - name: Validate Dockerfiles
+        run: |
+          docker build --pull -f api/Dockerfile -t iprint-api:model-validation .
+          docker build --pull -f dashboard/Dockerfile -t iprint-dashboard:model-validation .
+
+      - name: Validate Compose configuration
+        run: docker compose config
