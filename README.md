@@ -1178,33 +1178,8 @@ Top 10 related articles
 
 ---
 
-# 32. Future Improvements
 
-The next development phases can include:
-
-- [ ] Connect the trained LightGBM LTR artifact directly to FastAPI.
-- [ ] Connect the FAISS semantic index to online retrieval.
-- [ ] Implement strict seen-item filtering in the serving path.
-- [ ] Implement pulled/unavailable article filtering.
-- [ ] Add explicit English-language filtering for content-based retrieval.
-- [ ] Add a dedicated related-article endpoint.
-- [ ] Add real-time interaction/event ingestion.
-- [ ] Add online CTR tracking.
-- [ ] Add recommendation diversity and novelty constraints.
-- [ ] Add recommendation drift detection.
-- [ ] Add automated model promotion through MLflow.
-- [ ] Add scheduled retraining.
-- [ ] Add A/B experimentation.
-- [ ] Add model rollback.
-- [ ] Add production authentication and authorization.
-- [ ] Add rate limiting.
-- [ ] Add distributed tracing.
-- [ ] Add data-quality validation.
-- [ ] Add feature-store integration.
-
----
-
-# 33. Security & Configuration
+# 32. Security & Configuration
 
 Production credentials must never be committed to Git.
 
