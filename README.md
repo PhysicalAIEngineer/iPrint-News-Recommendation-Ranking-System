@@ -414,6 +414,12 @@ training/metrics.py
 
 # 12. Recommendation Output
 
+
+
+https://github.com/user-attachments/assets/b999907b-edaf-4411-b017-015082c0334c
+
+
+
 The final recommendation response should contain the article ID and article title.
 
 Example:
