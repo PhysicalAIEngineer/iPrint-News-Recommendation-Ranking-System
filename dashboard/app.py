@@ -7,7 +7,6 @@ from typing import Any
 import pandas as pd
 import plotly.express as px
 import requests
-import streamlit.components.v1 as components
 import streamlit as st
 
 API_URL = os.getenv("API_URL", "http://api:8000")
