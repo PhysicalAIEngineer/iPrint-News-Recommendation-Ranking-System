@@ -7,6 +7,7 @@ from typing import Any
 import pandas as pd
 import plotly.express as px
 import requests
+import streamlit.components.v1 as components
 import streamlit as st
 
 API_URL = os.getenv("API_URL", "http://api:8000")
@@ -180,12 +181,7 @@ elif page == "Live Recommendations":
 
         st.markdown("### Ranking Distribution")
         rec_df = pd.DataFrame(payload["recommendations"])
-        fig = px.bar(
-            rec_df,
-            x="article_id",
-            y="score",
-            title="Recommendation Scores",
-        )
+        fig = px.bar(rec_df, x="article_id", y="score", title="Recommendation Scores", template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
 
         with st.expander("Raw API Response"):
