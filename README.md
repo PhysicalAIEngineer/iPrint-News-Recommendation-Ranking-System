@@ -1234,6 +1234,18 @@ Continuous Feedback
 
 The design explicitly separates **data preparation, retrieval, ranking, model lifecycle, serving, persistence, dashboarding, and observability**, making the system easier to evaluate, test, deploy, and extend.
 
+Resume Points:
+1. Built an end-to-end personalized news recommendation and ranking system covering data preparation, feature engineering, candidate generation, semantic retrieval, and Learning-to-Rank (LTR).
+2. Developed a multi-stage hybrid recommendation pipeline combining collaborative filtering, popularity, trending, country-based, TF-IDF, and semantic relevance signals.
+3. Implemented LightGBM Learning-to-Rank to combine heterogeneous recommendation signals and generate ranked Top-10 news recommendations.
+4. Evaluated the LTR model with NDCG@10, Recall@10, Precision@10, and MRR@10, achieving 0.350 NDCG@10, 0.532 Recall@10, 0.053 Precision@10, and 0.294 MRR@10 on the evaluated dataset.
+5. Benchmarked multiple recommendation strategies, including ALS, country score, trending score, popularity score, collaborative-filtering score, TF-IDF, and semantic score, against the LTR ranking model.
+6. Built semantic retrieval capabilities for news recommendation, enabling content-based similarity between articles and supporting recommendation of relevant articles from article content.
+7. Designed recommendation features from user–article interactions and content metadata, supporting personalization, relevance scoring, freshness, and ranking.
+8. Implemented a production-oriented FastAPI recommendation service with recommendation, ranking, health/readiness, model, and Prometheus metrics endpoints.
+9. Integrated MLOps and serving infrastructure using MLflow, Redis, PostgreSQL, Prometheus, and Grafana, enabling experiment tracking, caching, persistence, and service monitoring.
+10. Developed a Streamlit recommendation analytics dashboard and Dockerized deployment stack, providing visibility into recommendations, ranking metrics, model evaluation, and system monitoring.
+
 ---
 
 ## License
